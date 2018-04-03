@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 17:51:05 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/03/26 17:08:13 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/04/03 18:15:02 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ void		knit_point_to_point(t_pflo a, t_pflo b, t_iso **hop)
 	m = 0;
 	abs1 = ((a.x - b.x) < 0 ? ((a.x - b.x) * -1) : (a.x - b.x));
 	abs2 = ((a.y - b.y) < 0 ? ((a.y - b.y) * -1) : (a.y - b.y));
-	if (a.x == b.x || a.y == b.y)
-		ft_draw_line(hop, a, b);
-	else if (abs1 > abs2)
+	if (abs1 > abs2)
 	{
 		m = (b.y - a.y) / (b.x - a.x);
 		(*hop)->map->maxi.shift_x = (int)fmin(a.x, b.x);
@@ -63,33 +61,6 @@ void		knit_point_to_point(t_pflo a, t_pflo b, t_iso **hop)
 		(*hop)->map->maxi.shift_x = (int)fmin(a.y, b.y);
 		(*hop)->map->maxi.shift_y = (int)fmax(a.y, b.y);
 		ft_draw_diago_y(((a.y < b.y) ? a : b), m, hop);
-	}
-}
-
-void		ft_draw_line(t_iso **hop, t_pflo p1, t_pflo p2)
-{
-	int		sens;
-
-	sens = 0;
-	if (p1.y == p2.y)
-	{
-		sens = (p1.x > p2.x) ? -1 : 1;
-		while (p1.x != p2.x)
-		{
-			set_color_mode(hop, p1);
-			pixel_to_image(hop, p1);
-			p1.x += sens;
-		}
-	}
-	else if (p1.x == p2.x)
-	{
-		sens = (p1.y > p2.y) ? -1 : 1;
-		while (p1.y != p2.y)
-		{
-			set_color_mode(hop, p1);
-			pixel_to_image(hop, p1);
-			p1.y += sens;
-		}
 	}
 }
 

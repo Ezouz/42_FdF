@@ -1,7 +1,7 @@
 NAME = fdf
 CC = gcc
 CC_LIB = -L libft/ -lft
-CFLAGS = -Wall -Wextra -Werror  
+CFLAGS = -Wall -Wextra -Werror 
 CFLAGSLBX = -lmlx -framework OpenGL -framework Appkit
 X = /System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/X11/
 INCL = -I libft/includes -I$(X)

@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 15:34:20 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/03/29 12:35:09 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/04/03 15:23:50 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_read(char *arg, t_limap *parsed)
 		return (1);
 	if (ft_get_nbrofpoint(fd, &parsed->maxi) == 1)
 		return (1);
-	if (close(fd) == -1)
+	if (close(fd) == -1 || parsed->maxi.nbp == 0)
 		return (1);
 	fd = open(arg, O_RDONLY);
 	if (fd == -1)

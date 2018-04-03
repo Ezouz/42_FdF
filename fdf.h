@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 11:27:00 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/03/29 20:57:56 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/04/03 18:35:04 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 # define FDF_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <errno.h>
 # include <math.h>
 # include "mlx.h"
 # include "libft.h"
 # include "X.h"
-# define BUF_SIZE 36
+# define BUF_SIZE 900
 # define WINDOW_SX 800
 # define WINDOW_SY 750
 # define IMG_XMAX 800
@@ -145,7 +144,6 @@ void					direct_knit_operation(t_idx idx, t_iso **iso);
 void					ft_recalc_coord(t_iso **iso, t_limap *parsed);
 void					knit_map(t_idx idx, t_iso **hop);
 void					knit_point_to_point(t_pflo a, t_pflo b, t_iso **hop);
-void					ft_draw_line(t_iso **hop, t_pflo p1, t_pflo p2);
 void					ft_draw_diago_x(t_pflo p, float m, t_iso **hop);
 void					ft_draw_diago_y(t_pflo p, float m, t_iso **hop);
 void					pixel_to_image(t_iso **hop, t_pflo p);

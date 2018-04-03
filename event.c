@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 18:59:58 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/03/29 17:01:51 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/04/03 18:30:38 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int		my_key_func(int keycode, t_iso **iso)
 	if (keycode == 125)
 		(*iso)->up += 2;
 	if (keycode == 69)
-		(*iso)->space += 1;
+		(*iso)->space += 0.2;
 	if (keycode == 78)
-		(*iso)->space -= 1;
+		if ((*iso)->space >= 0.2)
+			(*iso)->space -= 0.2;
 	if (keycode >= 86 && keycode <= 92)
 		my_key_func2(keycode, iso);
 	ft_reinit_img(iso);
