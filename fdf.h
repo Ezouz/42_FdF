@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 11:27:00 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/04/03 18:35:04 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/05/15 18:10:20 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void					init_space(t_iso **iso, t_limap *parsed);
 void					ft_reinit_img(t_iso **iso);
 int						init_param(t_limap *parsed, t_iso *param);
 int						fdf_iso(t_limap *parsed);
-int						env_iso(t_iso **iso);
+void					env_iso(t_iso **iso);
 void					direct_knit_operation(t_idx idx, t_iso **iso);
 void					ft_recalc_coord(t_iso **iso, t_limap *parsed);
 void					knit_map(t_idx idx, t_iso **hop);

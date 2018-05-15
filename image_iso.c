@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 14:18:42 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/03/29 17:25:03 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/05/15 18:11:15 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int			fdf_iso(t_limap *parsed)
 
 	iso = NULL;
 	param.map = parsed;
-	init_param(parsed, &param);
+	if (!(init_param(parsed, &param)))
+		return (0);
 	param.event.key = &my_key_func;
 	param.event.mouse = &func_to_turn;
 	param.event.buttonpress = &func_to_press;
 	param.event.buttonrelease = &func_to_release;
 	iso = &param;
 	init_space(&iso, parsed);
-	if (env_iso(&iso))
-		return (1);
-	return (0);
+	env_iso(&iso);
+	return (1);
 }
 
-int			env_iso(t_iso **iso)
+void		env_iso(t_iso **iso)
 {
 	(*iso)->env.mlx = mlx_init();
 	(*iso)->env.win = mlx_new_window((*iso)->env.mlx,
@@ -52,7 +52,6 @@ int			env_iso(t_iso **iso)
 	mlx_hook((*iso)->env.win, ButtonRelease,
 								ButtonReleaseMask, func_to_release, iso);
 	mlx_loop((*iso)->env.mlx);
-	return (0);
 }
 
 void		direct_knit_operation(t_idx idx, t_iso **iso)

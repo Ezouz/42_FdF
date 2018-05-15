@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 18:59:58 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/04/03 18:30:38 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/05/15 17:31:04 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int		my_key_func(int keycode, t_iso **iso)
 	if (keycode == 53)
 		exit(0);
 	if (keycode == 123)
-		(*iso)->shift -= 2;
+		(*iso)->shift -= 5;
 	if (keycode == 124)
-		(*iso)->shift += 2;
+		(*iso)->shift += 5;
 	if (keycode == 126)
-		(*iso)->up -= 2;
+		(*iso)->up -= 5;
 	if (keycode == 125)
-		(*iso)->up += 2;
+		(*iso)->up += 5;
 	if (keycode == 69)
 		(*iso)->space += 0.2;
 	if (keycode == 78)

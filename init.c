@@ -6,7 +6,7 @@
 /*   By: ehouzard <ehouzard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/03 18:40:08 by ehouzard          #+#    #+#             */
-/*   Updated: 2018/03/26 17:01:42 by ehouzard         ###   ########.fr       */
+/*   Updated: 2018/05/15 18:07:36 by ehouzard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		init_param(t_limap *parsed, t_iso *param)
 	if (!(param->point = malloc(sizeof(t_pflo) * parsed->maxi.nbp))
 			|| !(param->col = malloc(sizeof(t_col)))
 			|| !(param->move = malloc(sizeof(t_mouse))))
-		return (1);
+		return (0);
 	param->alpha = 19.8;
 	param->omega = 19.8;
 	param->high = 0.1;
@@ -71,7 +71,7 @@ int		init_param(t_limap *parsed, t_iso *param)
 		param->point[i].z = 0;
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 void	init_space(t_iso **iso, t_limap *parsed)
